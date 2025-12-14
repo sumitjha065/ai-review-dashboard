@@ -1,0 +1,12 @@
+.idea/
+target/
+**/target/
+node_modules/
+frontend/build/
+*.log
+.env
+.DS_Store
+*.iml
+
+# Secrets
+application-secrets.properties

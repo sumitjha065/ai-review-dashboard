@@ -1,0 +1,16 @@
+{
+  "name": "review-dashboard-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "chokidar-cli": "^3.0.0",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "backend:watch": "chokidar \"backend/src/main/java/**/*\" -c \"mvn -f backend compile -DskipTests\" --initial",
+    "backend:run": "mvn -f backend spring-boot:run",
+    "frontend:start": "npm --prefix frontend start",
+    "dev": "concurrently -k \"npm run backend:watch\" \"npm run backend:run\" \"npm run frontend:start\""
+  }
+}
